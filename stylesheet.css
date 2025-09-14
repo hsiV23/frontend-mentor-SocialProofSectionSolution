@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: League Spartan;
+}
+
+:root {
+    /* header, rate p and review card color */
+    --prim-color: hsl(300, 43%, 22%);
+
+    /* 'Verified' color */
+    --second-prim-color: hsl(333, 80%, 67%);
+
+    /* p color */
+    --font-color: hsl(303, 10%, 53%);
+
+    /*rate background card color*/
+    --rate-bg-color: hsl(300, 24%, 96%);
+}
+
+html{
+    height: 100%;
+}
+
+body {
+    background: url(images/bg-pattern-top-desktop.svg),
+        url(images/bg-pattern-bottom-desktop.svg);
+
+    background-repeat: no-repeat;
+
+    background-position: top 0px left 0px,
+        bottom 0px right 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 1000px;
+}
+
+/*Main tab or top segment of page*/
+.main-tab {
+    display: flex;
+}
+
+.main-tab>* {
+    flex-basis: 50%;
+}
+
+/*Description container on top left of page*/
+.description-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.description-container>h1 {
+    width: 70%;
+    font-size: 40px;
+    margin-bottom: 25px;
+    color: var(--prim-color);
+
+}
+
+.description-container>p {
+    line-height: 20px;
+    width: 80%;
+    color: var(--font-color);
+    font-weight: 500;
+}
+
+/* rates container */
+.rates-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.stars {
+    background-image: url(images/icon-star.svg),
+        url(images/icon-star.svg),
+        url(images/icon-star.svg),
+        url(images/icon-star.svg),
+        url(images/icon-star.svg);
+    background-repeat: no-repeat;
+    background-position: 0px center,
+        25px center,
+        50px center,
+        75px center,
+        100px center;
+
+    width: 120px;
+    height: 20px;
+
+    display: inline-block;
+}
+
+div[class$="rate"] {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    padding: 15px 15px 15px 25px;
+    background-color: var(--rate-bg-color);
+}
+
+.first-row-rate {
+    align-self: flex-start;
+}
+
+#sec {
+    align-self: center;
+    width: 85%;
+}
+
+.third-row-rate {
+    align-self: end;
+}
+
+div[class$="rate"]>p {
+    margin-left: 30px;
+    color: var(--prim-color);
+    font-weight: 700;
+}
+
+/* reviews container */
+.reviews-container {
+    display: flex;
+    gap: 20px;
+
+    height: 220px;
+    margin-top: 30px;
+}
+
+div[class$="review-container"] {
+    background-color: var(--prim-color);
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.first-column-review-container {
+    align-self: flex-start;
+}
+
+.second-column-review-container {
+    align-self: center;
+}
+
+.third-column-review-container {
+    align-self: flex-end;
+}
+
+.reviews-container img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.info {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    gap: 5px;
+}
+
+.verif {
+    color: var(--second-prim-color);
+}
+
+.p-name {
+    color: white;
+}
+
+.desc p {
+    color: white;
+    line-height: 20px;
+}
+
+@media screen and (320px <= width <= 900px) {
+    .card-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: unset;
+        width: clamp(320px, 85%, 900px);
+        margin-top: 50px;
+        height: 100%;
+    }
+    .main-tab{
+        flex-direction: column;
+        align-items: center;
+    }
+    .description-container{
+        align-items: center;
+    }
+    .description-container>h1{
+        width: unset;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .description-container>p{
+        width: unset;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .rates-container{
+        width: 100%;
+    }
+    div[class$="rate"]{
+        align-self: unset;
+        width: 100%;
+        flex-direction: column;
+    }
+    #sec{
+        align-self: unset;
+        width: 100%;
+    }
+    div[class$="rate"] p{
+        margin-left: unset;
+        margin-top: 10px;
+    }
+
+    .reviews-container{
+        margin-top: 50px;
+        flex-direction: column;
+    }
+    div[class$="review-container"]{
+        align-self: unset;
+    }
+
+}
